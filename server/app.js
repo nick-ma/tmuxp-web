@@ -5,11 +5,16 @@ var fs = require('fs'),
 
 var app = express();
 
+var serverHost = process.env.host || '0.0.0.0';
+var serverPort = process.env.port || 3000;
+var media_path = require('path').join(__dirname, '..', '/media');
+
+
 app.engine('mustache', cons.hogan);
+
 app.set('view engine', 'mustache');
 app.set('views', __dirname + '/tpl');
 
-var media_path = require('path').join(__dirname, '..', '/media');
 app.use('/media', express.static(media_path));
 
 app.get('/json', function (req, res) {
@@ -32,12 +37,9 @@ app.get('/', function (req, res, next) {
   _.extend(res.locals, {
     title: 'create your own tmux workspace'
   });
-  res.render('page', {
-  });
+  res.render('page');
 });
 
-var serverHost = process.env.host || '0.0.0.0';
-var serverPort = process.env.port || 3000;
 console.log('Server now running on <http://%s:%s>.', serverHost, serverPort);
 app.listen(serverPort, serverHost);
 
