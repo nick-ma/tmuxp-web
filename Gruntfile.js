@@ -1,9 +1,8 @@
 module.exports = function (grunt) {
   grunt.initConfig({
-    serverfile: './app.js',
     concurrent: {
       dev: {
-        tasks: ['hub:app', 'watch:server'],
+        tasks: ['hub:app', 'nodemon:server'],
         options: {
           logConcurrentOutput: true
         }
@@ -12,11 +11,11 @@ module.exports = function (grunt) {
     nodemon: {
       server: {
         options: {
-          file: '<%= serverfile %>',
+          file: './server/app.js',
           args: ['production'],
           ignoreFiles: ['node_modules/**'],
           watchedExtensions: ['js', 'mustache'],
-          watchedFolders: ['.', 'tpl'],
+          watchedFolders: ['./server', './server/tpl'],
           debug: false,
           delayTime: 1
         },
@@ -38,13 +37,14 @@ module.exports = function (grunt) {
     jshint: {
       all_files: {
         src: [
-            'gruntfile.js',
-            'app.js',
+            'Gruntfile.js',
+            'server/app.js',
+            'app/app.js'
         ]
       },
 
       options: {
-        jshintrc: '../.jshintrc'
+        jshintrc: '.jshintrc'
       }
     },
     express: {
