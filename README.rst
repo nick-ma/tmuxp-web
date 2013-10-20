@@ -42,7 +42,8 @@ project layout
  test server
 =================
 
-./server.js       local `express`_ server for previewing the app
+./server/         local test server files
+  - app.js        simple `express`_ http server for previewing the app
 ./Gruntfile.js    `Gruntfile`_ for local server
 ./package.json    `package.json`_ document. list dependencies to be
                   downloaded with ``$ npm install`` is ran.

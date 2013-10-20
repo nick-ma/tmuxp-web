@@ -13,7 +13,7 @@ var media_path = require('path').join(__dirname, '..', '/media');
 app.engine('mustache', cons.hogan);
 
 app.set('view engine', 'mustache');
-app.set('views', __dirname + '/tpl');
+app.set('views', require('path').join(__dirname, '/tpl'));
 
 app.use('/media', express.static(media_path));
 
@@ -37,7 +37,7 @@ app.get('/', function (req, res, next) {
   _.extend(res.locals, {
     title: 'create your own tmux workspace'
   });
-  res.render('page');
+  res.render('page', {});
 });
 
 console.log('Server now running on <http://%s:%s>.', serverHost, serverPort);

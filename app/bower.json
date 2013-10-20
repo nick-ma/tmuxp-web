@@ -1,7 +1,9 @@
 {
-  "name": "tmuxp-web-client",
+  "name": "tmuxp-web-app",
   "version": "0.1.0",
   "main": "app.js",
+  "description": "web app for building tmuxp config files",
+  "license": "BSD",
   "dependencies": {
     "jquery": "latest",
     "lodash": "latest",

@@ -1,7 +1,9 @@
 {
-  "name": "tmux-web-client",
+  "name": "tmux-web-app",
   "version": "0.1.0",
   "main": "./app",
+  "description": "web app for building tmuxp config files",
+  "license": "BSD",
   "devDependencies": {
     "grunt": "",
     "grunt-contrib-watch": "",
