@@ -19,9 +19,11 @@
     "lodash": "",
     "grunt-contrib-requirejs": "",
     "grunt-contrib-jshint": "",
-    "grunt-contrib-watch": ""
+    "grunt-contrib-watch": "",
+    "grunt-contrib-less": "",
+    "grunt-recess": ""
   },
   "scripts": {
-    "postinstall" :"cd ./app && npm install && bower install; cd ../;"
+    "postinstall" :"cd ./app && bower install; cd ../;"
   }
 }

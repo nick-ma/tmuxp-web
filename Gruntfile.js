@@ -2,7 +2,7 @@ module.exports = function (grunt) {
   grunt.initConfig({
     concurrent: {
       dev: {
-        tasks: ['hub:app', 'nodemon:server'],
+        tasks: ['nodemon:server', 'watch'],
         options: {
           logConcurrentOutput: true
         }
@@ -37,9 +37,9 @@ module.exports = function (grunt) {
     jshint: {
       all_files: {
         src: [
-            'Gruntfile.js',
-            'server/app.js',
-            'app/app.js'
+          'Gruntfile.js',
+          'server/app.js',
+          'app/app.js'
         ]
       },
 
@@ -55,23 +55,66 @@ module.exports = function (grunt) {
       }
     },
     watch: {
-      server: {
-        files: ['server/*.js', './server/tpl/**/*.mustache'],
-        tasks: ['jshint', 'express:server'],
+      // server: {
+        // files: ['server/*.js', './server/tpl/**/*.mustache'],
+        // tasks: ['jshint', 'express:server'],
+        // options: {
+          // nospawn: true,
+          // atBegin: true
+        // }
+      // },
+      testing: {
+        files: ['./app/*.js'],
         options: {
-          nospawn: true,
-          atBegin: true
+          livereload: 32822,
         }
       },
+      appjs: {
+        files: ['app/app.js'],
+        tasks: ['jshint', 'requirejs:app']
+      },
+      appless: {
+        files: ['app/less/**/*.less'],
+        tasks: ['recess:app']
+      }
+
+    },
+    requirejs: {
+      app: {
+        options: {
+          wrap: true,
+          baseUrl: './app/',
+          almond: true,
+          out: './media/js/app.js',
+          include: 'app',
+          enforceDefine: true,
+          name: './bower_components/almond/almond',
+          paths: {
+            underscore: './bower_components/lodash/dist/lodash'
+          }
+        }
+      }
+    },
+    recess: {
+      app: {
+        options: {
+          compile: true
+        },
+        files: {
+          './media/css/app.css': ['./app/less/app.less']
+        }
+      }
     }
+
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-nodemon');
-  grunt.loadNpmTasks('grunt-hub');
   grunt.loadNpmTasks('grunt-express-server');
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
+  grunt.loadNpmTasks('grunt-recess');
 
   // for running server without grunt-hub
   grunt.registerTask('default', 'concurrent:dev');

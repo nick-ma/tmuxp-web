@@ -1,3 +1,3 @@
 require(['underscore'], function(_) {
-  console.log('hi');
+  console.log('hi lsaa. tony');
 });

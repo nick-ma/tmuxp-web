@@ -25,7 +25,8 @@ app.get('/json', function (req, res) {
 
 app.get('*', function (req, res, next) {
   res.locals.js = [
-    '/media/js/app.js'
+    '/media/js/app.js',
+    'http://127.0.0.1:32822/livereload.js'
   ];
   res.locals.css = [
     '/media/css/app.css' 
