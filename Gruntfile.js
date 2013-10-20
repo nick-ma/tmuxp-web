@@ -14,7 +14,6 @@ module.exports = function (grunt) {
     watch: {
       app: {
         files: ['./app/Gruntfile.js'],
-
       },
       server: {
         files: ['./server/Gruntfile.js'],
@@ -25,5 +24,5 @@ module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-hub');
 
-  grunt.registerTask('default', ['hub', 'watch']);
+  grunt.registerTask('default', ['watch']);
 };

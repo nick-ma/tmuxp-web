@@ -1,16 +1,12 @@
 module.exports = function (grunt) {
   grunt.initConfig({
-    files: {
-      js: ['Gruntfile.js', 'app.js'],
-      less: ['less/**/*']
-    },
     watch: {
       js: {
-        files: ['<%= files.js %>'],
+        files: ['Gruntfile.js', 'app.js'],
         tasks: ['jshint', 'requirejs:app']
       },
       less: {
-        files: ['<%= files.less %>'],
+        files: ['less/**/*'],
         tasks: ['recess:app']
       }
     },
