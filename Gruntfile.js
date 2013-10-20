@@ -1,6 +1,6 @@
 module.exports = function (grunt) {
   grunt.initConfig({
-    serverFile: 'app.js',
+    serverFile: 'simpleserver.js',
     concurrent: {
       dev: {
         tasks: ['nodemon', 'hub:client', 'watch'],
@@ -40,7 +40,7 @@ module.exports = function (grunt) {
     hub: {
       client: {
         src: ['client/Gruntfile.js'],
-        tasks: ['watch']
+        tasks: ['setup', 'watch']
       }
     },
     jshint: {
@@ -58,20 +58,16 @@ module.exports = function (grunt) {
     },
     files: {
       manifest: ['Gruntfile.js', 'bower.js'],
-      server: ['app.js']
+      server: ['simpleserver.js']
     },
     watch: {
-      hi: {
-        files: ['*.js'],
-        tasks: ['jshint']
-      }
+      files: ['*.js'],
+      tasks: ['jshint']
     }
   });
 
-  // Project configuration.
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-concurrent');
-  //grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-nodemon');
   grunt.loadNpmTasks('grunt-hub');
   grunt.loadNpmTasks('grunt-contrib-watch');
