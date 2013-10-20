@@ -7,11 +7,11 @@ module.exports = function (grunt) {
     watch: {
       js: {
         files: ['<%= files.js %>'],
-        tasks: ['jshint', 'requirejs:client']
+        tasks: ['jshint', 'requirejs:app']
       },
       less: {
         files: ['<%= files.less %>'],
-        tasks: ['recess:client']
+        tasks: ['recess:app']
       }
     },
     jshint: {
@@ -25,7 +25,7 @@ module.exports = function (grunt) {
       }
     },
     requirejs: {
-      client: {
+      app: {
         options: {
           wrap: true,
           baseUrl: './',
@@ -41,7 +41,7 @@ module.exports = function (grunt) {
       }
     },
     recess: {
-      client: {
+      app: {
         options: {
           compile: true
         },
@@ -58,6 +58,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('setup', ['requirejs:client', 'recess:client']);
+  grunt.registerTask('buildall', ['requirejs:app', 'recess:app']);
 
 };

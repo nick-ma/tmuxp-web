@@ -9,7 +9,8 @@ app.engine('mustache', cons.hogan);
 app.set('view engine', 'mustache');
 app.set('views', __dirname + '/tpl');
 
-app.use('/media', express.static(__dirname + '/media'));
+var media_path = require('path').join(__dirname, '..', '/media');
+app.use('/media', express.static(media_path));
 
 app.get('/json', function (req, res) {
   res.json({
@@ -35,7 +36,9 @@ app.get('/', function (req, res, next) {
   });
 });
 
-console.log(process.env.port || 3000);
-app.listen(process.env.port || 3000, '0.0.0.0');
+var serverHost = process.env.host || '0.0.0.0';
+var serverPort = process.env.port || 3000;
+console.log('Server now running on <http://%s:%s>.', serverHost, serverPort);
+app.listen(serverPort, serverHost);
 
 exports = module.exports = app;
