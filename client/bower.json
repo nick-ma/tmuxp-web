@@ -1,0 +1,14 @@
+{
+  "name": "tmuxp-web-client",
+  "version": "0.1.0",
+  "main": "app.js",
+  "dependencies": {
+    "jquery": "latest",
+    "lodash": "latest",
+    "almond": "latest",
+    "backbone-amd": "latest",
+    "backbone.marionette": "latest",
+    "backbone.marionette.handlebars": "latest",
+    "handlebars": "latest"
+  }
+}

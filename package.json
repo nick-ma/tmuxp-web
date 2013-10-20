@@ -1,0 +1,19 @@
+{
+  "name": "tmuxp-web",
+  "version": "0.1.0",
+  "main": "./app",
+  "devDependencies": {
+    "lodash": "",
+    "grunt": "",
+    "grunt-hub": "",
+    "grunt-contrib-watch": "",
+    "grunt-contrib-jshint": "",
+    "grunt-concurrent": "",
+    "grunt-recess": "",
+    "grunt-nodemon": "~0.1.1",
+    "nodemon": "",
+    "express": "",
+    "consolidate": "",
+    "hogan.js": ""
+  }
+}

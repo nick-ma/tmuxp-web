@@ -1,0 +1,13 @@
+{
+  "name": "tmux-web-client",
+  "version": "0.1.0",
+  "main": "./app",
+  "devDependencies": {
+    "grunt": "",
+    "grunt-contrib-watch": "",
+    "grunt-contrib-jshint": "",
+    "grunt-contrib-requirejs": "",
+    "grunt-recess": "",
+    "bower": ""
+  }
+}
