@@ -2,8 +2,13 @@
   "name": "tmuxp-web",
   "version": "0.1.0",
   "main": "./app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tony/tmuxp-web.git"
+  },
   "devDependencies": {
     "grunt": "",
+    "bower": "",
     "grunt-express-server": "",
     "grunt-concurrent": "",
     "grunt-nodemon": "",
@@ -11,7 +16,7 @@
     "express": "",
     "consolidate": "",
     "hogan.js": "",
-    "bower": "",
+    "lodash": "",
     "grunt-contrib-requirejs": "",
     "grunt-contrib-jshint": "",
     "grunt-contrib-watch": ""

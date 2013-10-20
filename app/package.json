@@ -4,6 +4,10 @@
   "main": "./app",
   "description": "web app for building tmuxp config files",
   "license": "BSD",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tony/tmuxp-web.git"
+  },
   "devDependencies": {
     "grunt": "",
     "grunt-contrib-watch": "",
