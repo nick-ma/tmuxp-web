@@ -1,0 +1,18 @@
+session_name: tmuxp-web
+windows:
+- window_name: tmuxp-web
+  layout: main-horizontal
+  options:
+    main-pane-height: 50
+  - shell_command_before: 
+    - cd ./
+    - '[ -d .node_modules ] || npm install'
+    - '[ -d ./app/bower_components ] || cd app && bower install && cd ../'
+  panes:
+  - shell_command: 
+    - vim
+    focus: true
+  - shell_command: 
+    - pwd
+  - shell_command: 
+    - pwd
