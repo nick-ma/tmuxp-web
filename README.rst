@@ -50,15 +50,18 @@ project layout
  - app.js           app widget (`AMD`_ format)
  - bower.js         `bower`_ package list
  - less/
-   - bootstrap.less comment-in and comment-out sections of bootstrap you
-                    want to use
- - vendor/bootstrap twitter bootstrap
+   - bootstrap.less +/- sections of bootstrap
+   - variables.less +/-/change variables for building bootstrap
+ - vendor/bootstrap `twitter bootstrap`
 ./server/           local test server files
   - app.js          simple `express`_ http server for previewing the app
 ./Gruntfile.js      `Gruntfile`_ for local server + requirejs + less 
                     building.
 ./package.json      `package.json`_ document. list dependencies to be
                     downloaded with ``$ npm install`` is ran.
+./media/
+  - css/app.css     css build file
+  - js/app.js       js app build file
 =================== ======================================================
 
 .. _nodejs: http://nodejs.org/
