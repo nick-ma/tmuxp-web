@@ -39,6 +39,8 @@ Start dev server + client builder (inside project root):
 
 Launch the development environment in `tmuxp`_ (requires ``tmux`` >= 1.8):
 
+.. code-block:: bash
+
     $ pip install -e tmuxp
     $ tmuxp .
 
