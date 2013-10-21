@@ -4,10 +4,10 @@ windows:
   layout: main-horizontal
   options:
     main-pane-height: 50
-  - shell_command_before: 
+  shell_command_before: 
     - cd ./
-    - '[ -d .node_modules ] || npm install'
-    - '[ -d ./app/bower_components ] || cd app && bower install && cd ../'
+    - '[ ! -d .node_modules ] || npm install'
+    - '[ ! -d ./app/bower_components ] || cd app && bower install && cd ../'
   panes:
   - shell_command: 
     - vim
