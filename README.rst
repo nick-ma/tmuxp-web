@@ -4,6 +4,9 @@ tmuxp web
 web widget for building tmux workspaces, for use inside of `tmuxp`_
 documentation.
 
+- Livereload
+- Simple express server
+
 .. _tmuxp: https://www.github.com/tony/tmuxp
 
 develop environment
@@ -22,10 +25,10 @@ Clone repository and install dependencies.
 .. code-block:: bash
 
     $ git clone --recursive https://github.com/tony/tmuxp-web.git
-    $ cd ./tmuxp-web
     $ npm install
-    $ cd ./client
-    $ npm install
+
+    (the next 3 commands run automatically, in case not):
+    $ cd ./app
     $ bower install
     $ cd ../
 
