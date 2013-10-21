@@ -1,13 +1,12 @@
 tmuxp web
 =========
 
-web widget for building tmux workspaces, for use inside of `tmuxp`_
-documentation.
+drop-in webapp for creating tmuxp configurations in yaml, for use inside
+of `tmuxp`_ documentation.
 
 - Livereload
 - Simple express server
-
-.. _tmuxp: https://www.github.com/tony/tmuxp
+- Modular `twitter bootstrap`_ and user-defined variables.
 
 develop environment
 -------------------
@@ -38,6 +37,11 @@ Start dev server + client builder (inside project root):
 
     $ grunt
 
+Launch the development environment in `tmuxp`_ (requires ``tmux`` >= 1.8):
+
+    $ pip install -e tmuxp
+    $ tmuxp .
+
 project layout
 --------------
 
@@ -45,7 +49,10 @@ project layout
 ./app/
  - app.js           app widget (`AMD`_ format)
  - bower.js         `bower`_ package list
- - vendor/bootstrap
+ - less/
+   - bootstrap.less comment-in and comment-out sections of bootstrap you
+                    want to use
+ - vendor/bootstrap twitter bootstrap
 ./server/           local test server files
   - app.js          simple `express`_ http server for previewing the app
 ./Gruntfile.js      `Gruntfile`_ for local server + requirejs + less 
@@ -60,3 +67,5 @@ project layout
 .. _Gruntfile: http://gruntjs.com/getting-started
 .. _package.json: https://npmjs.org/doc/json.html
 .. _AMD: http://requirejs.org/docs/whyamd.html
+.. _twitter bootstrap: http://getbootstrap.com/
+.. _tmuxp: https://www.github.com/tony/tmuxp
