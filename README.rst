@@ -41,21 +41,22 @@ Start dev server + client builder (inside project root):
 project layout
 --------------
 
-=================
- test server
-=================
-
-./server/         local test server files
-  - app.js        simple `express`_ http server for previewing the app
-./Gruntfile.js    `Gruntfile`_ for local server
-./package.json    `package.json`_ document. list dependencies to be
-                  downloaded with ``$ npm install`` is ran.
-
-
-./client/app.js   the application itself
+=================== ======================================================
+./app/
+ - app.js           app widget (`AMD`_ format)
+ - bower.js         `bower`_ package list
+ - vendor/bootstrap
+./server/           local test server files
+  - app.js          simple `express`_ http server for previewing the app
+./Gruntfile.js      `Gruntfile`_ for local server + requirejs + less 
+                    building.
+./package.json      `package.json`_ document. list dependencies to be
+                    downloaded with ``$ npm install`` is ran.
+=================== ======================================================
 
 .. _nodejs: http://nodejs.org/
 .. _bower: http://bower.io/
 .. _express: http://expressjs.com/
 .. _Gruntfile: http://gruntjs.com/getting-started
 .. _package.json: https://npmjs.org/doc/json.html
+.. _AMD: http://requirejs.org/docs/whyamd.html
